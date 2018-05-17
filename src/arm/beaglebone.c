@@ -246,10 +246,10 @@ mraa_beaglebone_spi_init_pre(int index)
     }
     if (mraa_file_exist(devpath)) {
         plat->spi_bus[index].bus_id = deviceindex;
-        if (set_pin_mode(plat->spi_bus[index].cs, "spi") == MRAA_SUCCESS &&
+        if (set_pin_mode(plat->spi_bus[index].cs, "spi_cs") == MRAA_SUCCESS &&
             set_pin_mode(plat->spi_bus[index].mosi, "spi") == MRAA_SUCCESS &&
             set_pin_mode(plat->spi_bus[index].miso, "spi") == MRAA_SUCCESS &&
-            set_pin_mode(plat->spi_bus[index].sclk, "spi") == MRAA_SUCCESS) {
+            set_pin_mode(plat->spi_bus[index].sclk, "spi_sclk") == MRAA_SUCCESS) {
             ret = MRAA_SUCCESS;
         }
         ret = MRAA_SUCCESS;
